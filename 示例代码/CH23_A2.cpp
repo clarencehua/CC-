@@ -1,26 +1,34 @@
-#include <stdio.h>
-
-class Base
-{
+#include<stdio.h>
+#include<string.h>
+class Tutorial{
 public:
-	int x;
-	void Print()
-	{
-		printf("x is %d \n", x);
-	}
+    char name[32];
+    char author[16];
+public:
+    void ShowInfo(){
+        printf("Tutorial:%s,%s \n",name,author);
+    }
 };
-
-class Child: public Base
-{
+class VideoTutorial:public Tutorial{
+public:
+    void play(){
+        printf("Playing...abc=%d \n",visits);
+    }
+public:
+    char url[128];
+    int visits;
 };
+int main(){
+    VideoTutorial  cpp_guide;
+    strcpy(cpp_guide.name,"c/c++学习开发指南");
+    strcpy(cpp_guide.author,"邵发");
+    cpp_guide.ShowInfo();
 
-int main()
-{
-	Child ch;
-	ch.x = 1;
-	ch.Print();
-	return 0;
+    strcpy(cpp_guide.url,"www.baidu.com");
+    cpp_guide.visits=10;
+    return 0;
 }
+
 
 
 
