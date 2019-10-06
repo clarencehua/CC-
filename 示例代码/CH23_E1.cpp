@@ -6,7 +6,7 @@ class Base
 public:
 	Base() : x(0), y(0)
 	{
-		printf(" ......base destroy ....\n");
+		printf(" ......base create ....\n");
 	}
 	Base(int x, int y): x(x), y(y)
 	{
